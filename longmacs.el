@@ -2,7 +2,7 @@
 ;; Copyright 2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 1.0
+;; Version: 1.1
 ;; Keywords: convenience, server
 ;; URL: https://github.com/davep/longmacs.el
 ;; Package-Requires: ((bind-key "1.0"))
