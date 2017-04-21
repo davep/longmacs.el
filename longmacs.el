@@ -5,6 +5,7 @@
 ;; Version: 1.0
 ;; Keywords: convenience, server
 ;; URL: https://github.com/davep/longmacs.el
+;; Package-Requires: ((bind-key "1.0"))
 
 ;; longmacs.el is free software distributed under the terms of the GNU
 ;; General Public Licence, version 2 or (at your option) any later version.
