@@ -19,7 +19,7 @@
 ;; me keep bad habits under control.
 ;;
 ;; On my iMac and Macbook I tend to start an Emacs sesssion, run
-;; `longmacs-enable', turn it into a full-screen application, and then do
+;; `longmacs', turn it into a full-screen application, and then do
 ;; all my editing in there.
 ;;
 ;; See also uptimes.el for another tool to help encourage good Emacs use.
@@ -35,7 +35,7 @@
   (message "C-x C-c is disabled"))
 
 ;;;###autoload
-(defun longmacs-enable ()
+(defun longmacs ()
   "Turn this emacs sesssion into a long term emacs.
 
 This involves disabling C-x C-c and also calling `server-start'.
