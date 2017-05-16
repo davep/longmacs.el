@@ -44,7 +44,8 @@ If you do need to exit emacs, simply M-x `kill-emacs' RET
 instead."
   (interactive)
   (server-start)
-  (bind-key "C-x C-c" #'longmacs-no-exit))
+  (bind-key "C-x C-c" #'longmacs-no-exit)
+  (message "C-x C-c now disabled and server started."))
 
 (provide 'longmacs)
 
