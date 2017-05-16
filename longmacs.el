@@ -45,10 +45,11 @@ run.")
 (defun longmacs ()
   "Turn this emacs sesssion into a long term emacs.
 
-This involves disabling C-x C-c and also calling `server-start'.
+This involves disabling the keyboard binding for
+`save-buffers-kill-terminal' (which is normally C-x C-c) and also
+calling `server-start'.
 
-If you do need to exit emacs, simply M-x `kill-emacs' RET
-instead."
+If you do need to exit emacs, simply \\[kill-emacs] instead."
   (interactive)
   (server-start)
   (unless longmacs-exit-keys
