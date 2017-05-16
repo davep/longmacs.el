@@ -28,11 +28,18 @@
 
 (require 'bind-key)
 
+(defvar longmacs-exit-keys nil
+  "Holds on to the keys that would have been pressed to invoke
+`save-buffers-kill-terminal'. Populated by `longmacs' when first
+run.")
+
 ;;;###autoload
 (defun longmacs-no-exit ()
   "Do nothing other than say we're doing nothing."
   (interactive)
-  (message "C-x C-c is disabled"))
+  (if longmacs-exit-keys
+      (message "%s is disabled." longmacs-exit-keys)
+    (message "longmacs hasn't been called.")))
 
 ;;;###autoload
 (defun longmacs ()
@@ -44,8 +51,10 @@ If you do need to exit emacs, simply M-x `kill-emacs' RET
 instead."
   (interactive)
   (server-start)
-  (bind-key "C-x C-c" #'longmacs-no-exit)
-  (message "C-x C-c now disabled and server started."))
+  (unless longmacs-exit-keys
+    (setq longmacs-exit-keys (substitute-command-keys "\\[save-buffers-kill-terminal]"))
+    (bind-key longmacs-exit-keys #'longmacs-no-exit))
+  (message "%s now disabled and server started." longmacs-exit-keys))
 
 (provide 'longmacs)
 
